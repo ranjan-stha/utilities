@@ -10,7 +10,7 @@ Now, in order to install the required packages, you can run the following code:
 
 <b>$ pip install -r requirements.txt</b>
 
-The repository comes with two samples CSV files which contain students' records.
+The repository comes with two samples CSV files which contain students' records. <br>
 Book1.csv is the main attendance file <br>
 Book2.csv is the current attendance file
 
