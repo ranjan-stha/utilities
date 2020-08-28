@@ -40,9 +40,8 @@ def clean_string(x):
 # Search in the substring for a match
 def search_string(x):
 	for current_name in current_names.values:
-		if x.startswith(current_name) or current_name.startswith(x):
+		if current_name.split()[0] in x and current_name.split()[-1] in x:
 			return True
-
 	return False
 
 # Reading the main csv file
@@ -50,13 +49,15 @@ df_main = pandas.read_csv(MAIN_FILE, sep=';')
 # Reading the current csv file
 df_current = pandas.read_csv(CURRENT_FILE, sep=';')
 
-#current_names = df_current[CURRENT_COL_NAME].str.lower().map(clean_string)
-#processed_current_data = df_main[MAIN_COL_NAME].str.lower().map(clean_string).map(search_string)
+current_names = df_current[CURRENT_COL_NAME].str.lower().map(clean_string)
+processed_current_data_1 = list(df_main[MAIN_COL_NAME].str.lower().map(clean_string).map(search_string))
 
-processed_current_data =  df_main[MAIN_COL_NAME].str.lower().map(clean_string).isin(df_current[CURRENT_COL_NAME].str.lower().map(clean_string)).values # alternative
+processed_current_data_2 =  list(df_main[MAIN_COL_NAME].str.lower().map(clean_string).isin(df_current[CURRENT_COL_NAME].str.lower().map(clean_string)).values)
+
+final_processed_data = processed_current_data_1 or processed_current_data_2
 
 # Add a new column to the main dataframe
-df_main[NEW_COL] = ['P' if x else 'A' for x in processed_current_data]
+df_main[NEW_COL] = ['P' if x else 'A' for x in final_processed_data]
 
 print ('='*50)
 # Displaying the final result in main dataframe (MAX=100 records)
