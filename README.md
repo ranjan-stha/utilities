@@ -1,12 +1,12 @@
 # Manage Attendance
 
-This program automates the attendance keeping of the students by integrating the current attendance records into the main attendance file.
+This script  automates the attendance keeping of the students by integrating the current attendance records into the main attendance file.
 
 First of all, Python 3.x should be installed in your system.
 
 Also, the package pip should be installed.
 
-Now, in order to install the required packages, you can run the following code:
+Now, in order to install the required packages, you can run the following command:
 
 <b>$ pip install -r requirements.txt</b>
 
