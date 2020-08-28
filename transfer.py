@@ -45,9 +45,9 @@ def search_string(x):
 	return False
 
 # Reading the main csv file
-df_main = pandas.read_csv(MAIN_FILE, sep=';')
+df_main = pandas.read_csv(MAIN_FILE, sep=';|,', engine='python')
 # Reading the current csv file
-df_current = pandas.read_csv(CURRENT_FILE, sep=';')
+df_current = pandas.read_csv(CURRENT_FILE, sep=';|,', engine='python')
 
 current_names = df_current[CURRENT_COL_NAME].str.lower().map(clean_string)
 processed_current_data_1 = list(df_main[MAIN_COL_NAME].str.lower().map(clean_string).map(search_string))
