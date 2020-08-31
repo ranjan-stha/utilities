@@ -40,6 +40,7 @@ def clean_string(x):
 
 	return " ".join([x for x in x.split() if len(x)>2]) # for name or surname the length is most probably more than 2 letters
 
+# Removes all the english stop words defined in nltk library
 def filter_nltk_stop_words(x):
 	return ' '.join(list(set(x.split()) - nltk_stop_words))
 
