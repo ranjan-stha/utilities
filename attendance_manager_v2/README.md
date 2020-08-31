@@ -18,6 +18,14 @@ With this script, you can either use images or csv file to integrate the attenda
 
 To use Images, just take the snapshot of the screen of the attendance of the students, then run the script as follows:
 
+Before you run the script, you need to install pytesseract.
+
+For Windows machine, find the executable file in this link: https://github.com/UB-Mannheim/tesseract/wiki
+
+Install this executable in drive C:\
+
+After the installation, you can run the below script.
+
 <b>$ python 0 transfer.py Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
 
 <i> Note: You can pass as many image files as you want </i>
