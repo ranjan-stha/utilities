@@ -1,4 +1,4 @@
-# Manage Attendance
+# Manage Attendance using Optical Character Recognition(OCR)
 
 This script  automates the attendance keeping of the students by integrating the current attendance records into the main attendance file.
 
@@ -14,9 +14,17 @@ The repository comes with two samples CSV files which contain students' records.
 Book1.csv is the main attendance file <br>
 Book2.csv is the current attendance file
 
-In order to automate the integration, run the following command where we are passing several commandline arguments
+With this script, you can either use images or csv file to integrate the attendance.
 
-<b>$ python transfer.py Book1.csv Book2.csv name name "Sep 2"</b>
+To use Images, just take the snapshot of the screen of the attendance of the students, then run the script as follows:
+
+<b>$ python 0 transfer.py Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
+
+<i> Note: You can pass as many image files as you want </i>
+
+The alternative is to use the current attendance list in csv format. Run the script as follows:
+
+<b>$ python 1 transfer.py Book1.csv Book2.csv name name "Sep 2"</b>
 
 where,
 Book1.csv is the main attendance file <br>
