@@ -36,11 +36,8 @@ __author__ = 'ranjan-stha'
 def clean_string(x):
 	x.strip()
 	x.replace(" ", "")
-	#print (x)
-	x = re.sub(r"[^a-zA-Z ]+", '', x)#re.sub(r'\d*', '', x)
+	x = re.sub(r"[^a-zA-Z ]+", '', x)
 
-	#x = [x for x.split()
-	#print (x)
 	return " ".join([x for x in x.split() if len(x)>2]) # for name or surname the length is most probably more than 2 letters
 
 def filter_nltk_stop_words(x):
