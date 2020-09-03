@@ -87,8 +87,8 @@ NEW_COL = None
 
 if MODE == 1: # takes in csv file
 	if len(sys.argv) != 7:
-		print ("Five arguments should be present")
-		print ("Exiting!!")
+		print ("With Mode set to 1, Six arguments are expected in the commandline. Check the usage !!")
+		print ("Exiting !!")
 		sys.exit(0)
 
 	MAIN_FILE = sys.argv[2]
@@ -98,6 +98,11 @@ if MODE == 1: # takes in csv file
 	NEW_COL = sys.argv[6]
 
 elif MODE == 0: # takes in jpg/png images
+	if len(sys.argv) < 5:
+		print ("With Mode set to 0, at least 5 arguments are expected in the commandline. Check the usage !!")
+		print ("Exiting !!")
+		sys.exit(0)
+
 	try:
 		MAIN_FILE = sys.argv[2]
 		MAIN_COL_NAME = sys.argv[3]
