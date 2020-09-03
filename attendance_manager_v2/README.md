@@ -26,6 +26,8 @@ Install this executable in drive C:\
 
 For Mac users, install the tesseract package using: brew install tesseract
 
+and line no. 110 (pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH) should be commented.
+
 After the installation, you can run the below script.
 
 <b>$ python 0 transfer.py Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
