@@ -30,13 +30,13 @@ and line no. 110 (pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH) should
 
 After the installation, you can run the below script.
 
-<b>$ python 0 transfer.py Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
+<b>$ python transfer.py 0 Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
 
 <i> Note: You can pass as many image files as you want </i>
 
 The alternative is to use the current attendance list in csv format. Run the script as follows:
 
-<b>$ python 1 transfer.py Book1.csv Book2.csv name name "Sep 2"</b>
+<b>$ python transfer.py 1 Book1.csv Book2.csv name name "Sep 2"</b>
 
 where,
 Book1.csv is the main attendance file <br>
