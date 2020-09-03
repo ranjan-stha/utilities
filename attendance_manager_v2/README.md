@@ -24,6 +24,8 @@ For Windows machine, find the executable file in this link: https://github.com/U
 
 Install this executable in drive C:\
 
+For Mac users, install the tesseract package using: brew install tesseract
+
 After the installation, you can run the below script.
 
 <b>$ python 0 transfer.py Book1.csv name <image1.{jpg|png} image2.{jpg|png} ......> "Sep 2" </b> </br>
