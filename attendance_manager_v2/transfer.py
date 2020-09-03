@@ -38,7 +38,7 @@ def clean_string(x):
 	x.replace(" ", "")
 	x = re.sub(r"[^a-zA-Z. ]+", '', x)
 
-	return " ".join([x for x in x.split() if len(x)>2]) # for name or surname the length is most probably more than 2 letters
+	return " ".join([x for x in x.split() if len(x)>=2]) # for name or surname the length is most probably more than 2 letters
 
 # Removes all the english stop words defined in nltk library
 def filter_nltk_stop_words(x):
@@ -143,7 +143,7 @@ elif MODE == 0:
 		
 		splitted_text = [filter_nltk_stop_words(x) for x in splitted_text]
 		
-		splitted_text = [x for x in splitted_text if x and len(x)<25 and len(x)>5]
+		splitted_text = [x for x in splitted_text if x and len(x)<30 and len(x)>5]
 		current_names.append(splitted_text)
 
 	current_names = list(set([item for sublist in current_names for item in sublist]))  # flatteing the list
