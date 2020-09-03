@@ -36,7 +36,7 @@ __author__ = 'ranjan-stha'
 def clean_string(x):
 	x.strip()
 	x.replace(" ", "")
-	x = re.sub(r"[^a-zA-Z ]+", '', x)
+	x = re.sub(r"[^a-zA-Z. ]+", '', x)
 
 	return " ".join([x for x in x.split() if len(x)>2]) # for name or surname the length is most probably more than 2 letters
 
@@ -115,10 +115,10 @@ elif MODE == 0: # takes in jpg/png images
 		sys.exit(0)
 
 # Reading data frames 
-df_main = pd.read_csv(MAIN_FILE, sep=';|,', engine='python')
+df_main = pd.read_csv(MAIN_FILE, sep=';|,', index_col=False, engine='python')
 
 if MODE == 1:
-	df_current = pd.read_csv(CURRENT_FILE, sep=';|,', engine='python')
+	df_current = pd.read_csv(CURRENT_FILE, sep=';|,', index_col=False, engine='python')
 	current_names = df_current[CURRENT_COL_NAME].str.lower().map(clean_string).values
 elif MODE == 0:
 	current_names = []
@@ -149,6 +149,8 @@ elif MODE == 0:
 	current_names = list(set([item for sublist in current_names for item in sublist]))  # flatteing the list
 	print ('='*50)
 	print (f"The list of names extracted from images are \n {current_names}")
+	print (f"The total count is {len(current_names)}")
+
 
 # Processed the data
 if MODE == 1:
