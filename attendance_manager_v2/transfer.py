@@ -61,9 +61,9 @@ def search_string_2(x):
 
 # Resizes the image
 def resize_image(img, scale_factor):
-	return cv2.resize(img, None, fx=scale_factor, fy=scale_factor, interpolation = cv2.INTER_CUBIC)
+	return cv2.resize(img, None, fx = scale_factor, fy = scale_factor, interpolation = cv2.INTER_CUBIC)
 
-# Sharpen the image for better detection
+# Sharpen the image for better detection (2D Convolution)
 def sharpen_image(img):
 	kernel = np.array([[-1,-1,-1], 
                    [-1, 9,-1],
@@ -118,6 +118,10 @@ elif MODE == 0: # takes in jpg/png images
 		print ("It seems you have not provided enough arguments")
 		print ("Exiting")
 		sys.exit(0)
+else:
+	print ("Wrong Mode selected. It should be either 0 or 1")
+	print ("Exiting !!")
+	sys.exit(0)
 
 # Reading data frames 
 df_main = pd.read_csv(MAIN_FILE, sep=';|,', index_col=False, engine='python')
